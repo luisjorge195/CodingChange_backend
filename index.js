@@ -17,11 +17,10 @@ const corsOptions = {
     }
 }
 
-app.use(cors(corsOptions)) 
+app.use(cors(corsOptions))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/api/museum', rutas)
-
 app.listen(process.env.PORT, ()=>{
    return;
-})
+}) 

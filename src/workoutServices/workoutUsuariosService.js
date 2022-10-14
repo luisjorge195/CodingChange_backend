@@ -8,6 +8,7 @@ const registrarUsuarios = async(data, res)=>{
     if(existeUsuario.rowCount!==0){
         const error = new Error('El usuario ya está registrado')
         res.status(403).json({msg: error.message})
+        return;
     }
     try {
         const hashPassword = CryptoJS.AES.encrypt(data.password, process.env.PASS_SECRET).toString();

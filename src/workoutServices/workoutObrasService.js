@@ -1,5 +1,6 @@
 import { pool } from '../database/workout.js';
 
+
 const insertarObras = async(_id, _idUsuario, titulo_obra, url_image_obra,res)=>{
     await pool.query('insert into obras (id_artista, id_usuario, titulo_obra, url_image_obra) values($1,$2,$3,$4)',[_id,_idUsuario, titulo_obra, url_image_obra]);
     res.status(201).json({ msg: 'Se guardó en tu lista de favoritos'});
