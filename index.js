@@ -20,6 +20,6 @@ const corsOptions = {
 app.use(cors(corsOptions))
 app.use(express.json());
 app.use('/api/museum', rutas)
-app.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT || 4000, ()=>{
    return;
 }) 
